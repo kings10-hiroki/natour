@@ -9,9 +9,9 @@ process.on('unhandledRejection', err => {
     const errmsgStop = fullMessage.indexOf(',', errmsgStart); // Find first comma after that
     const errmsgLen = errmsgStop - errmsgStart;
     const errorText = fullMessage.substr(errmsgStart, errmsgLen);
-    console.log(err.name);
-    console.log(errorText);
-    console.log('UNHANDLED REJECTION! Shutting down!');
+    // console.log(err.name);
+    // console.log(errorText);
+    // console.log('UNHANDLED REJECTION! Shutting down!');
     process.exit(1);
 });
 
@@ -26,7 +26,7 @@ mongoose.connect(DB, {
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
-    console.log(`App running on port ${port}...`);
+    // console.log(`App running on port ${port}...`);
 });
 
 process.on('unhandledRejection', err => {
@@ -35,9 +35,9 @@ process.on('unhandledRejection', err => {
     const errmsgStop = fullMessage.indexOf(',', errmsgStart); // Find first comma after that
     const errmsgLen = errmsgStop - errmsgStart;
     const errorText = fullMessage.substr(errmsgStart, errmsgLen);
-    console.log(err.name);
-    console.log(errorText);
-    console.log('UNHANDLED REJECTION! Shutting down!');
+    // console.log(err.name);
+    // console.log(errorText);
+    // console.log('UNHANDLED REJECTION! Shutting down!');
     server.close(() => {
         process.exit(1);
     });
