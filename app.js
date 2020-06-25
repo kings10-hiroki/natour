@@ -22,6 +22,8 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
+app.enable('trust proxy');
+
 // 1) middleware
 app.use(express.static(path.join(__dirname, 'public')));
 
